@@ -6,7 +6,8 @@ export default {
   head: {
     title: 'profile',
     htmlAttrs: {
-      lang: 'en'
+      lang : 'fa',
+      dir : 'rtl'
     },
     meta: [
       { charset: 'utf-8' },
@@ -21,6 +22,7 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '~/assets/styles/main.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
