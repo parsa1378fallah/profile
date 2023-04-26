@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
     font-family: vazir;
     src: url(../fonts//vazir/Vazir-Medium.ttf);
@@ -8,3 +12,42 @@
     padding: 0;
     font-family: vazir;
 }
+.tooltip {
+    position: relative;
+    display: inline-block;
+    background-color: #000;
+    color : #fff;
+    border-radius: 16px;
+    padding : 5px 10px;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    top : 50px;
+    z-index: 1;
+  }
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .tooltip[aria-hidden='true']
+  {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s , visibility 0.3s  ;
+  }
+  .tooltip[aria-hidden='false']
+  {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .3s  ;
+  }
+ 
+  
