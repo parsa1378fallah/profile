@@ -33,7 +33,23 @@
             ></component>
         </div>
       </div>
-    </div>   
+    </div> 
+    <div  class="container mx-auto sm:flex-col border-b-8 border-dotted pt-5 pb-10">
+      <h3 class="font-bold text-gray-700 text-3xl">پروژه ها</h3>
+      <div class="mt-16 grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-3">
+        <div class="border border-black rounded bg-white" 
+        v-for="project in projects" :key="project.img">
+          <img :src="project.img" class="rounded" />
+          <div class="m-6">
+            <span class="text-2xl text-gray-900">{{project.title}}</span>
+            <div class="mt-4 flex flex-row ">
+              <span  class="text-green-100 py-2 px-4 rounded-full mx-1"
+              v-for="label in project.labels" :key="label.key" :class="label.color">{{label.key}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
   </div>
 </template>
 <script setup>
@@ -78,5 +94,87 @@ const skills = [
         tooltip: 'sass'
       }
     ]
-    
+const projects = 
+[
+  {
+    img : "/_nuxt/assets/images/1-cart.PNG",
+    title : "سبد خرید",
+    labels : [
+        {
+          key  : "vuex",
+          color : "bg-green-800"
+        },
+        {
+          key  : "vue.js",
+          color : "bg-green-600"
+        }
+    ]
+  },
+  {
+    img : "/_nuxt/assets/images/2-panel.PNG",
+    title : "پنل ادمین",
+    labels : [
+        {
+          key  : "vuetify",
+          color : "bg-blue-800"
+        },
+        {
+          key  : "vue.js",
+          color : "bg-green-600"
+        }
+    ]
+  },
+  {
+    img : "/_nuxt/assets/images/3-music.PNG",
+    title : "موزیک پلیر",
+    labels : [
+        {
+          key  : "javascript",
+          color : "bg-yellow-800"
+        },
+        {
+          key  : "vue.js",
+          color : "bg-green-600"
+        }
+    ]
+  },
+  {
+    img : "/_nuxt/assets/images/4-weather.PNG",
+    title : "آب و هوا",
+    labels : [
+        {
+          key  : "rest-api",
+          color : "bg-slate-800"
+        },
+        {
+          key  : "vue.js",
+          color : "bg-green-600"
+        }
+    ]
+  },
+  {
+    img : "/_nuxt/assets/images/5-calc.PNG",
+    title : "ماشین حساب",
+    labels : [
+        {
+          key  : "vue.js",
+          color : "bg-green-600"
+        }
+    ]
+  },
+  {
+    img : "/_nuxt/assets/images/6-template.PNG",
+    title : "فروشگاه",
+    labels : [
+        {
+          key  : "libraries",
+          color : "bg-blue-600"
+        },
+        {
+          key  : "vue.js",
+          color : "bg-green-600"
+        }
+    ]
+  },
+]
 </script>
